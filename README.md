@@ -19,3 +19,16 @@ Link: <https://address-book-8.haidar.dev>
 1. User visits the homepage.
 2. User sees a list of contacts with their names and essential details (email & phone).
    - The contacts data is still an array of objects.
+
+Pseudocode:
+
+```mermaid
+graph TD
+    A[User visits homepage] --> B[Fetch contacts data]
+    B --> C[Display contacts list]
+    C --> D[Show name, email, phone for each contact]
+    D --> E{User clicks contact?}
+    E -->|Yes| F[Show detailed contact view]
+    F --> G[Display all contact information]
+    E -->|No| C
+```
