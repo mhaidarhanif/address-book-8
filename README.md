@@ -14,13 +14,7 @@ Link: <https://address-book-8.haidar.dev>
 
 ## Flows
 
-### Display all contacts
-
-1. User visits the homepage.
-2. User sees a list of contacts with their names and essential details (email & phone).
-   - The contacts data is still an array of objects.
-
-Pseudocode:
+Flowchart:
 
 ```mermaid
 graph TD
@@ -32,3 +26,9 @@ graph TD
     F --> G[Display all contact information]
     E -->|No| C
 ```
+
+### Display all contacts
+
+1. User visits the homepage.
+2. User sees a list of contacts with their names and essential details (email & phone).
+   - The contacts data is still an array of objects.
