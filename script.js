@@ -47,6 +47,18 @@ function addContact(name, age, email, phone, address) {
   });
 }
 
+function searchContacts() {
+  // ...
+}
+
+function deleteContact() {
+  // ...
+}
+
+function updateContact() {
+  // ...
+}
+
 addContact("Mark Zuck", 40, "mark@example.com", "+123", "Palo Alto, CA, USA");
 addContact("Bill Gates", 60, "bill@example.com", "+123", "Seattle, WA, USA");
 displayContacts();
