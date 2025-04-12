@@ -5,7 +5,6 @@ const contacts = [
     age: 30,
     email: "haidar@example.com",
     phone: "+62-851-0193029",
-    isFavorited: true,
     address: "Bandung, Indonesia",
   },
   {
@@ -23,14 +22,31 @@ function displayContacts() {
     const contact = contacts[index];
 
     console.log(`
+ID: ${contact.id}
 👤 Name: ${contact.name}
 📧 Email: ${contact.email}
 📞 Phone: ${contact.phone}
 🎂 Age: ${contact.age} years old
 📍 Address: ${contact.address}
-${contact.isFavorited ? "⭐ Favorited" : ""}
 `);
   }
 }
 
+function addContact(name, age, email, phone, address) {
+  const lastContact = contacts[contacts.length - 1];
+  const lastId = lastContact.id;
+  const nextId = lastId + 1;
+
+  contacts.push({
+    id: nextId,
+    name,
+    age,
+    email,
+    phone,
+    address,
+  });
+}
+
+addContact("Mark Zuck", 40, "mark@example.com", "+123", "Palo Alto, CA, USA");
+addContact("Bill Gates", 60, "bill@example.com", "+123", "Seattle, WA, USA");
 displayContacts();
