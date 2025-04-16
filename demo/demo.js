@@ -1,12 +1,14 @@
-const contacts = [
-  { name: "Haidar" },
-  { name: "Hanif" },
-  { name: "Superman" },
-  { name: "Batman" },
-];
+function sayHello() {
+  let name;
+  if (!name) {
+    throw Error("Name is required");
+  }
+}
 
-contacts.push({ name: "Elon Musk" });
-contacts.push({ name: "Mark Zuck" });
-contacts.push({ name: "Bill Gates" });
+try {
+  sayHello();
+} catch (error) {
+  console.error("Sorry", error);
+}
 
-console.log(contacts);
+console.log("Continue...");
