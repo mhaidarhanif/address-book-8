@@ -1,4 +1,4 @@
-const contacts = [
+let contacts = [
   {
     id: 1,
     name: "M Haidar Hanif",
@@ -10,10 +10,18 @@ const contacts = [
   {
     id: 2,
     name: "Elon Musk",
-    age: 50,
+    age: 55,
     email: "elon@example.com",
     phone: "+1-12121-0193029",
     address: "California, USA",
+  },
+  {
+    id: 3,
+    name: "Mark Zuckerberg",
+    age: 45,
+    email: "mark@example.com",
+    phone: "+1-2329-0193029",
+    address: "City, USA",
   },
 ];
 
@@ -37,18 +45,26 @@ function addContact(name, age, email, phone, address) {
   const lastId = lastContact.id;
   const nextId = lastId + 1;
 
-  contacts.push({
+  const newContact = {
     id: nextId,
     name,
     age,
     email,
     phone,
     address,
-  });
+  };
+
+  contacts.push(newContact);
 }
 
-function searchContacts() {
-  // ...
+function searchContacts(keyword) {
+  const foundContacts = contacts.filter((contact) => {
+    if (contact.name.toLowerCase().includes(keyword.toLowerCase())) {
+      return contact;
+    }
+  });
+
+  return foundContacts;
 }
 
 function deleteContact() {
@@ -59,6 +75,10 @@ function updateContact() {
   // ...
 }
 
-addContact("Mark Zuck", 40, "mark@example.com", "+123", "Palo Alto, CA, USA");
-addContact("Bill Gates", 60, "bill@example.com", "+123", "Seattle, WA, USA");
-displayContacts();
+// addContact("Mark Zuck", 40, "mark@example.com", "+123", "Palo Alto, CA, USA");
+// addContact("Bill Gates", 60, "bill@example.com", "+123", "Seattle, WA, USA");
+// displayContacts();
+
+const searchResults = searchContacts("dar");
+
+console.log(searchResults);
