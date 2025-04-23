@@ -75,10 +75,12 @@ function updateContact() {
   // ...
 }
 
-// addContact("Mark Zuck", 40, "mark@example.com", "+123", "Palo Alto, CA, USA");
-// addContact("Bill Gates", 60, "bill@example.com", "+123", "Seattle, WA, USA");
+// ---------------------------------
+// Program
+// ---------------------------------
+
 // displayContacts();
 
-const searchResults = searchContacts("dar");
+const allContactsListElement = document.getElementById("all-contacts");
 
-console.log(searchResults);
+console.log(allContactsListElement);
