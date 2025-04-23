@@ -83,6 +83,12 @@ const allContactsListElement = document.getElementById("all-contacts");
 
 allContactsListElement.innerHTML = allContacts
   .map((oneContact) => {
-    return `<li>${oneContact.name}</li>`;
+    return `<li>
+    <h2>${oneContact.name}</h2>
+    <p>${oneContact.email}</p>
+    <p>${oneContact.phone}</p>
+    <p>${oneContact.age} years old</p>
+    <p>${oneContact.address}</p>
+    </li>`;
   })
   .join("");
