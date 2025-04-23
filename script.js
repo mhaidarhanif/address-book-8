@@ -1,4 +1,4 @@
-let contacts = [
+let allContacts = [
   {
     id: 1,
     name: "M Haidar Hanif",
@@ -26,22 +26,22 @@ let contacts = [
 ];
 
 function displayContacts() {
-  for (let index = 0; index < contacts.length; index++) {
-    const contact = contacts[index];
+  for (let index = 0; index < allContacts.length; index++) {
+    const oneContact = allContacts[index];
 
     console.log(`
-ID: ${contact.id}
-👤 Name: ${contact.name}
-📧 Email: ${contact.email}
-📞 Phone: ${contact.phone}
-🎂 Age: ${contact.age} years old
-📍 Address: ${contact.address}
+ID: ${oneContact.id}
+👤 Name: ${oneContact.name}
+📧 Email: ${oneContact.email}
+📞 Phone: ${oneContact.phone}
+🎂 Age: ${oneContact.age} years old
+📍 Address: ${oneContact.address}
 `);
   }
 }
 
 function addContact(name, age, email, phone, address) {
-  const lastContact = contacts[contacts.length - 1];
+  const lastContact = allContacts[allContacts.length - 1];
   const lastId = lastContact.id;
   const nextId = lastId + 1;
 
@@ -54,13 +54,13 @@ function addContact(name, age, email, phone, address) {
     address,
   };
 
-  contacts.push(newContact);
+  allContacts.push(newContact);
 }
 
 function searchContacts(keyword) {
-  const foundContacts = contacts.filter((contact) => {
-    if (contact.name.toLowerCase().includes(keyword.toLowerCase())) {
-      return contact;
+  const foundContacts = allContacts.filter((oneContact) => {
+    if (oneContact.name.toLowerCase().includes(keyword.toLowerCase())) {
+      return oneContact;
     }
   });
 
