@@ -73,22 +73,24 @@ function updateContact() {
   // ...
 }
 
-// ---------------------------------
-// Program
-// ---------------------------------
+function renderContacts() {
+  const allContactsListElement = document.getElementById("all-contacts");
 
-// displayContacts();
-
-const allContactsListElement = document.getElementById("all-contacts");
-
-allContactsListElement.innerHTML = allContacts
-  .map((oneContact) => {
-    return `<li>
+  allContactsListElement.innerHTML = allContacts
+    .map((oneContact) => {
+      return `<li>
     <h2>${oneContact.name}</h2>
     <p>${oneContact.email}</p>
     <p>${oneContact.phone}</p>
     <p>${oneContact.age} years old</p>
     <p>${oneContact.address}</p>
     </li>`;
-  })
-  .join("");
+    })
+    .join("");
+}
+
+// ---------------------------------
+// Program
+// ---------------------------------
+
+renderContacts();
