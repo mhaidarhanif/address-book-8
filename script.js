@@ -26,18 +26,16 @@ let allContacts = [
 ];
 
 function displayContacts() {
-  for (let index = 0; index < allContacts.length; index++) {
-    const oneContact = allContacts[index];
-
+  allContacts.forEach((oneContact) => {
     console.log(`
-ID: ${oneContact.id}
-👤 Name: ${oneContact.name}
-📧 Email: ${oneContact.email}
-📞 Phone: ${oneContact.phone}
-🎂 Age: ${oneContact.age} years old
-📍 Address: ${oneContact.address}
-`);
-  }
+      ID: ${oneContact.id}
+      👤 Name: ${oneContact.name}
+      📧 Email: ${oneContact.email}
+      📞 Phone: ${oneContact.phone}
+      🎂 Age: ${oneContact.age} years old
+      📍 Address: ${oneContact.address}
+      `);
+  });
 }
 
 function addContact(name, age, email, phone, address) {
@@ -83,4 +81,8 @@ function updateContact() {
 
 const allContactsListElement = document.getElementById("all-contacts");
 
-console.log(allContactsListElement);
+allContactsListElement.innerHTML = allContacts
+  .map((oneContact) => {
+    return `<li>${oneContact.name}</li>`;
+  })
+  .join("");
