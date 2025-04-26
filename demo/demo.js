@@ -1,14 +1,7 @@
-function sayHello() {
-  let name;
-  if (!name) {
-    throw Error("Name is required");
-  }
-}
+const contactFormElement = document.getElementById("contact-form");
 
-try {
-  sayHello();
-} catch (error) {
-  console.error("Sorry", error);
-}
-
-console.log("Continue...");
+contactFormElement.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const formData = new FormData(contactFormElement);
+  console.log(formData.get("fullname"));
+});
