@@ -38,21 +38,15 @@ function displayContacts() {
   });
 }
 
-function addContact(name, age, email, phone, address) {
+function addContact(contactData) {
   const lastContact = allContacts[allContacts.length - 1];
   const lastId = lastContact.id;
   const nextId = lastId + 1;
 
-  const newContact = {
+  allContacts.push({
     id: nextId,
-    name,
-    age,
-    email,
-    phone,
-    address,
-  };
-
-  allContacts.push(newContact);
+    ...contactData,
+  });
 }
 
 function searchContacts(keyword) {
@@ -88,6 +82,26 @@ function renderContacts() {
     })
     .join("");
 }
+
+const contactFormElement = document.getElementById("contact-form");
+
+contactFormElement.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(contactFormElement);
+
+  const newContactFormData = {
+    name: String(formData.get("name")),
+    age: Number(formData.get("age")),
+    email: String(formData.get("email")),
+    phone: String(formData.get("phone")),
+    address: String(formData.get("address")),
+  };
+
+  addContact(newContactFormData);
+
+  renderContacts();
+});
 
 // ---------------------------------
 // Program
